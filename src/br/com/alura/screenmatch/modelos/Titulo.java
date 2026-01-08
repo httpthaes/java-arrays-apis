@@ -10,6 +10,11 @@ public class Titulo {
     private int duracaoEmMinutos;
     private String genero;
 
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
     //getters
     public String getNome() {
         return nome;
