@@ -5,6 +5,9 @@ import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Principal {
     static void main(String[] args) {
@@ -62,5 +65,18 @@ public class Principal {
                 System.out.println("Nota " + filme.getClassificacao());
             }
         }
+
+        //Ordenando listas
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Michael B. Jordan");
+        buscaPorArtista.add("Bob Odenkirk");
+        buscaPorArtista.add("Rhea Seehorn");
+        Collections.sort(buscaPorArtista);
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(listaDeFilmes);
+        System.out.println("Ordenando por nome: " + listaDeFilmes);
+        listaDeFilmes.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano: " + listaDeFilmes);
     }
 }
